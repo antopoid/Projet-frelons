@@ -24,3 +24,12 @@ Le détecteur de tonalité est mis de côté pour le moment, le but est de crée
 le but de cette carte est de pouvoir réunir toutes les fonctionnalités nécessaires sur un seul support
 La prochaine séance sera consacré à l'étude et la comparaison des microcontrolleur esp32 WROOM et WROVER
 ---------------------------------------------------------------------------
+--------------------------23/09/21-----------------------------------------
+Création d'un fichier de correspondance entre un esp32 WROVER, un kit de developpement réalisé par espressif et notre besoin.
+Le but étant de réussir à intégrer au minimum toutes les I/O nécessaires au projet.
+---------------------------------------------------------------------------
+--------------------------01/10/21-----------------------------------------
+Finalisation du fichier de correspondance, toutes les I/O rentrent dans l'ESP, pour cela il faudra gérer l'alimentation des périphériques (SDCard - Caméra/Moteur/Laser)
+séparement.
+Nous avons aussi brasé des esp32 sur des cartes de test (carte de report)
+---------------------------------------------------------------------------
