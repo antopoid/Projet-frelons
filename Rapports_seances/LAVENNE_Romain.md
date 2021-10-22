@@ -33,3 +33,8 @@ Finalisation du fichier de correspondance, toutes les I/O rentrent dans l'ESP, p
 séparement.
 Nous avons aussi brasé des esp32 sur des cartes de test (carte de report)
 ---------------------------------------------------------------------------
+--------------------------22/10/21-----------------------------------------
+Réalisation du schéma de la carte avec l'aide du fichier réalisé précedemment
+L'esp32, la sd card, la caméra sont câblés.
+Il reste à vérifier via des tests sur table (avec les cartes faites précedemment) que le schéma est correct
+---------------------------------------------------------------------------
