@@ -5984,6 +5984,8 @@ Source: &lt;a href= "http://www.hirose.co.jp/cataloge_hp/e58605370.pdf"&gt;Data 
 <part name="SUPPLY23" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="R9" library="eagle-ltspice" library_urn="urn:adsk.eagle:library:217" deviceset="R" device="R1206" package3d_urn="urn:adsk.eagle:package:13301/1" value="4.7K"/>
 <part name="R10" library="eagle-ltspice" library_urn="urn:adsk.eagle:library:217" deviceset="R" device="R1206" package3d_urn="urn:adsk.eagle:package:13301/1" value="4.7K"/>
+<part name="R11" library="eagle-ltspice" library_urn="urn:adsk.eagle:library:217" deviceset="R" device="R1206" package3d_urn="urn:adsk.eagle:package:13301/1" value="10k"/>
+<part name="SUPPLY24" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -6354,6 +6356,11 @@ display</text>
 <attribute name="NAME" x="210.82" y="77.6986" size="1.778" layer="95"/>
 <attribute name="VALUE" x="210.82" y="72.898" size="1.778" layer="96"/>
 </instance>
+<instance part="R11" gate="G$1" x="212.09" y="68.58" smashed="yes">
+<attribute name="NAME" x="210.82" y="70.0786" size="1.778" layer="95"/>
+<attribute name="VALUE" x="210.82" y="65.278" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY24" gate="GND" x="204.47" y="68.58" smashed="yes" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -6532,6 +6539,10 @@ display</text>
 <pinref part="C4" gate="G$1" pin="1"/>
 <wire x1="195.58" y1="45.72" x2="193.04" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="SUPPLY23" gate="GND" pin="GND"/>
+</segment>
+<segment>
+<pinref part="R11" gate="G$1" pin="1"/>
+<pinref part="SUPPLY24" gate="GND" pin="GND"/>
 </segment>
 </net>
 <net name="TX" class="0">
@@ -7033,13 +7044,6 @@ display</text>
 <pinref part="R10" gate="G$1" pin="2"/>
 </segment>
 </net>
-<net name="SD_CMD" class="0">
-<segment>
-<pinref part="SD1" gate="G$1" pin="CMD"/>
-<wire x1="146.05" y1="57.15" x2="140.97" y2="57.15" width="0.1524" layer="91"/>
-<label x="132.08" y="57.15" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="SD_CLK" class="0">
 <segment>
 <pinref part="SD1" gate="G$1" pin="CLK"/>
@@ -7189,12 +7193,15 @@ display</text>
 <wire x1="243.84" y1="121.92" x2="246.38" y2="121.92" width="0.1524" layer="91"/>
 <label x="240.03" y="121.92" size="1.778" layer="95"/>
 </segment>
-</net>
-<net name="CA_RST" class="0">
 <segment>
 <pinref part="X2" gate="-6" pin="1"/>
 <wire x1="238.76" y1="73.66" x2="233.68" y2="73.66" width="0.1524" layer="91"/>
-<label x="228.6" y="73.66" size="1.778" layer="95"/>
+<label x="219.71" y="73.66" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="SD1" gate="G$1" pin="CMD"/>
+<wire x1="146.05" y1="57.15" x2="140.97" y2="57.15" width="0.1524" layer="91"/>
+<label x="123.19" y="57.15" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="V1_2.5V" class="0">
@@ -7207,15 +7214,21 @@ display</text>
 <net name="CA_PWDN" class="0">
 <segment>
 <pinref part="X2" gate="-8" pin="1"/>
-<wire x1="238.76" y1="68.58" x2="233.68" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="238.76" y1="68.58" x2="217.17" y2="68.58" width="0.1524" layer="91"/>
 <label x="228.6" y="68.58" size="1.778" layer="95"/>
+<pinref part="R11" gate="G$1" pin="2"/>
 </segment>
 </net>
-<net name="N$9" class="0">
+<net name="V2_1.8V" class="0">
 <segment>
 <pinref part="X2" gate="-10" pin="1"/>
-<wire x1="238.76" y1="63.5" x2="203.2" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="238.76" y1="63.5" x2="212.09" y2="63.5" width="0.1524" layer="91"/>
 <pinref part="C22" gate="G$1" pin="1"/>
+<junction x="212.09" y="63.5"/>
+<wire x1="212.09" y1="63.5" x2="203.2" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="212.09" y1="63.5" x2="212.09" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="212.09" y1="66.04" x2="190.5" y2="66.04" width="0.1524" layer="91"/>
+<label x="186.69" y="67.31" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$10" class="0">

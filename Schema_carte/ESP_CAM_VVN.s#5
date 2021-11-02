@@ -5967,6 +5967,12 @@ Source: &lt;a href= "http://www.hirose.co.jp/cataloge_hp/e58605370.pdf"&gt;Data 
 <part name="U1" library="MCP3428-E_SL" deviceset="MCP3428-E/SL" device=""/>
 <part name="U3" library="i2c-led-controller" deviceset="PCA9685" device="PW"/>
 <part name="SD1" library="micro-sd_cp" deviceset="MICRO-SD-8" device=""/>
+<part name="SUPPLY3" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY9" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY12" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY13" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY15" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
+<part name="SUPPLY16" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -6303,6 +6309,12 @@ display</text>
 <attribute name="VALUE" x="88.9" y="68.58" size="1.778" layer="96"/>
 </instance>
 <instance part="SD1" gate="G$1" x="200.66" y="45.72" smashed="yes"/>
+<instance part="SUPPLY3" gate="GND" x="208.28" y="33.02" smashed="yes"/>
+<instance part="SUPPLY9" gate="GND" x="210.82" y="33.02" smashed="yes"/>
+<instance part="SUPPLY12" gate="GND" x="213.36" y="33.02" smashed="yes"/>
+<instance part="SUPPLY13" gate="GND" x="215.9" y="33.02" smashed="yes"/>
+<instance part="SUPPLY15" gate="GND" x="177.8" y="43.18" smashed="yes" rot="R270"/>
+<instance part="SUPPLY16" gate="GND" x="203.2" y="33.02" smashed="yes"/>
 </instances>
 <busses>
 </busses>
@@ -6435,6 +6447,30 @@ display</text>
 <pinref part="JP1" gate="A" pin="4"/>
 <pinref part="SUPPLY8" gate="GND" pin="GND"/>
 <wire x1="17.78" y1="116.84" x2="26.67" y2="116.84" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="SUPPLY3" gate="GND" pin="GND"/>
+<pinref part="SD1" gate="G$1" pin="SHIELD@1"/>
+</segment>
+<segment>
+<pinref part="SUPPLY9" gate="GND" pin="GND"/>
+<pinref part="SD1" gate="G$1" pin="SHIELD@2"/>
+</segment>
+<segment>
+<pinref part="SUPPLY12" gate="GND" pin="GND"/>
+<pinref part="SD1" gate="G$1" pin="SHIELD@3"/>
+</segment>
+<segment>
+<pinref part="SUPPLY13" gate="GND" pin="GND"/>
+<pinref part="SD1" gate="G$1" pin="SHIELD@4"/>
+</segment>
+<segment>
+<pinref part="SUPPLY15" gate="GND" pin="GND"/>
+<pinref part="SD1" gate="G$1" pin="VSS"/>
+</segment>
+<segment>
+<pinref part="SUPPLY16" gate="GND" pin="GND"/>
+<pinref part="SD1" gate="G$1" pin="DTC-VSS"/>
 </segment>
 </net>
 <net name="TX" class="0">
@@ -6834,25 +6870,25 @@ display</text>
 <label x="200.66" y="144.78" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="VSYNC" class="0">
+<net name="CA_VSYNC" class="0">
 <segment>
 <pinref part="U2" gate="G$1" pin="IO25"/>
 <wire x1="205.74" y1="137.16" x2="203.2" y2="137.16" width="0.1524" layer="91"/>
-<label x="200.66" y="137.16" size="1.778" layer="95"/>
+<label x="196.85" y="137.16" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="SIO_D" class="0">
+<net name="CA_SIO_D" class="0">
 <segment>
 <pinref part="U2" gate="G$1" pin="IO26"/>
 <wire x1="205.74" y1="134.62" x2="203.2" y2="134.62" width="0.1524" layer="91"/>
-<label x="200.66" y="134.62" size="1.778" layer="95"/>
+<label x="196.85" y="134.62" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="SIO_C" class="0">
+<net name="CA_SIO_C" class="0">
 <segment>
 <pinref part="U2" gate="G$1" pin="IO27"/>
 <wire x1="205.74" y1="132.08" x2="203.2" y2="132.08" width="0.1524" layer="91"/>
-<label x="200.66" y="132.08" size="1.778" layer="95"/>
+<label x="196.85" y="132.08" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SD_CMD" class="0">
@@ -6920,6 +6956,23 @@ display</text>
 <pinref part="SD1" gate="G$1" pin="DAT1"/>
 <wire x1="180.34" y1="50.8" x2="175.26" y2="50.8" width="0.1524" layer="91"/>
 <label x="161.29" y="50.8" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U2" gate="G$1" pin="IO4"/>
+<wire x1="243.84" y1="129.54" x2="246.38" y2="129.54" width="0.1524" layer="91"/>
+<label x="238.76" y="129.54" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="CA_XCLK_SD_DET" class="0">
+<segment>
+<pinref part="SD1" gate="G$1" pin="DETECT"/>
+<wire x1="200.66" y1="35.56" x2="200.66" y2="33.02" width="0.1524" layer="91"/>
+<label x="200.66" y="31.75" size="1.778" layer="95" rot="R180"/>
+</segment>
+<segment>
+<pinref part="U2" gate="G$1" pin="IO21"/>
+<wire x1="243.84" y1="147.32" x2="248.92" y2="147.32" width="0.1524" layer="91"/>
+<label x="238.76" y="147.32" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
