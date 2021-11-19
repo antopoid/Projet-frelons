@@ -38,3 +38,7 @@ Réalisation du schéma de la carte avec l'aide du fichier réalisé précedemme
 L'esp32, la sd card, la caméra sont câblés.
 Il reste à vérifier via des tests sur table (avec les cartes faites précedemment) que le schéma est correct
 ---------------------------------------------------------------------------
+--------------------------12/11/21-----------------------------------------
+Point avec M Peter sur le schéma de la carte.
+Mise à jour du schéma
+---------------------------------------------------------------------------
