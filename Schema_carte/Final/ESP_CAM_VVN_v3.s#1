@@ -15565,6 +15565,13 @@ dark : 500k
 <label x="148.59" y="54.61" size="1.778" layer="95"/>
 </segment>
 </net>
+<net name="V1_2.5V" class="0">
+<segment>
+<pinref part="X2" gate="-4" pin="1"/>
+<wire x1="241.3" y1="93.98" x2="236.22" y2="93.98" width="0.1524" layer="91"/>
+<label x="231.14" y="93.98" size="1.778" layer="95"/>
+</segment>
+</net>
 <net name="CA_PWDN" class="0">
 <segment>
 <pinref part="X2" gate="-8" pin="1"/>
@@ -15642,11 +15649,6 @@ dark : 500k
 <wire x1="113.03" y1="52.07" x2="113.03" y2="59.69" width="0.1524" layer="91"/>
 <junction x="113.03" y="59.69"/>
 <label x="130.81" y="38.1" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="X2" gate="-4" pin="1"/>
-<wire x1="241.3" y1="93.98" x2="236.22" y2="93.98" width="0.1524" layer="91"/>
-<label x="231.14" y="93.98" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$9" class="0">

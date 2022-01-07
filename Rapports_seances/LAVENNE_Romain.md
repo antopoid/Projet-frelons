@@ -42,3 +42,11 @@ Il reste à vérifier via des tests sur table (avec les cartes faites précedemm
 Point avec M Peter sur le schéma de la carte.
 Mise à jour du schéma
 ---------------------------------------------------------------------------
+--------------------------07/01/22-----------------------------------------
+Essai de connexion sans succès sur l'ESP32 Wrover
+Pourtant un ESP32 CAM fonctionne correctement...
+Utilisation d'un autre IDE (Vscode) sans succès
+Mesures et essais de différentes tensions d'alimentation 5V et 3.3V - ok
+Le convertisseur USB-TTL est bien reconnu, mais il n'est pas possible d'établir la liaison avec l'ESP 
+Problème non résolu pour le moment, il est impossible de confirmer le bon fonctionnement de la caméra avec cette configuration pour le moment.
+---------------------------------------------------------------------------
