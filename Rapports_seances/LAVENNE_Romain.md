@@ -50,3 +50,11 @@ Mesures et essais de différentes tensions d'alimentation 5V et 3.3V - ok
 Le convertisseur USB-TTL est bien reconnu, mais il n'est pas possible d'établir la liaison avec l'ESP 
 Problème non résolu pour le moment, il est impossible de confirmer le bon fonctionnement de la caméra avec cette configuration pour le moment.
 ---------------------------------------------------------------------------
+--------------------------03/02/22-----------------------------------------
+L'ESP32 sur la carte de test ne peut pas se téléverser automatiquement, il faut appuyer sur les deux boutons (RST et PROG) puis relacher RST puis PROG. La cause reste inconnue.
+Nous avons reçu les nouvelles cartes, braser les différents composants CMS et traversants.
+3 erreurs pour le moment sur la carte : 
+- I0 est relié nulle part conséquence --> impossible d'effectuer le téléversement (a noter que le téléversement en automatique fonctionne )
+- La commande du 5v et du 3V3 est réalisé par le PCA9685 qui lui même est alimenté le 5v ou le 3V3, nous avons donc alimenté directement le PCA9685
+- Led inversé
+Prochain cours : suite du debug de la carte 
