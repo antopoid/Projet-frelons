@@ -19,7 +19,7 @@
 
 #include "camera_pins.h"
 
-const char* ssid = "OPPO Reno2";
+const char* ssid = "Toinou";
 const char* password = "pa705278";
 
 void startCameraServer();
