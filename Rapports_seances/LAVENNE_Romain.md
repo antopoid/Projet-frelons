@@ -58,3 +58,9 @@ Nous avons reçu les nouvelles cartes, braser les différents composants CMS et 
 - La commande du 5v et du 3V3 est réalisé par le PCA9685 qui lui même est alimenté le 5v ou le 3V3, nous avons donc alimenté directement le PCA9685
 - Led inversé
 Prochain cours : suite du debug de la carte 
+--------------------------03/02/22-----------------------------------------
+J'ai créé un fichier excel répertoriant les différents tests effectués ainsi que les corrections à apporter sur une prochaine version de la carte.
+Le fichier se trouve ici ./Projet_frelons/Debug_carte.xlsx
+J'ai pu valider le fonctionnement du PCA9685.
+Prochain cours : test de la mesure de la LDR via le MCP3428
+				 test du pilotage du 5v et du POWER_SD(Alimentation de la carte SD)
