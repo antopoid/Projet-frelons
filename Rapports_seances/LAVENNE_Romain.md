@@ -45,6 +45,9 @@ Point avec M Peter sur le schéma de la carte.
 Mise à jour du schéma
 Les schémas sont stockés ici : ./Projet_frelons/Schema_carte
 ---------------------------------------------------------------------------
+--------------------------Fin 2021 - début 2022----------------------------
+M Peter à finalisé le routage du PCB, le schéma se trouve ici : ./Projet-frelons/Schema_carte/Final
+Le PCB a été envoyé en production
 --------------------------07/01/22-----------------------------------------
 Essai de connexion sans succès sur l'ESP32 Wrover
 Pourtant un ESP32 CAM fonctionne correctement...
@@ -55,7 +58,7 @@ Problème non résolu pour le moment, il est impossible de confirmer le bon fonc
 ---------------------------------------------------------------------------
 --------------------------03/02/22-----------------------------------------
 L'ESP32 sur la carte de test ne peut pas se téléverser automatiquement, il faut appuyer sur les deux boutons (RST et PROG) puis relacher RST puis PROG. La cause reste inconnue.
-Nous avons reçu les nouvelles cartes, braser les différents composants CMS et traversants.
+Nous avons reçu les nouvelles cartes, braser les différents composants CMS et traversants. Il manque une capa de 15 pF, remplacé par une 10pF pour le moment (clk de la caméra)
 3 erreurs pour le moment sur la carte : 
 - I0 est relié nulle part conséquence --> impossible d'effectuer le téléversement (a noter que le téléversement en automatique fonctionne )
 - La commande du 5v et du 3V3 est réalisé par le PCA9685 qui lui même est alimenté le 5v ou le 3V3, nous avons donc alimenté directement le PCA9685
