@@ -20,6 +20,7 @@ J'ai emmené les cartes afin de faire l'essai chez moi et analyser les sons enre
 Fin des tests de detecteur de tonalité
 Réglage des cartes à environ 230 Hz, création du rapport de test (accessible dans github : Rapport_detecteur_tonalite.xslx)
 Rencontre avec Bernard Barrois et Jody Nourry en visio afin de nous présenter leur projet et exprimer leurs attentes
+Le rapport de test est ici ./Projet_frelons/Rapport_detecteur_tonalite.xlsx
 Le détecteur de tonalité est mis de côté pour le moment, le but est de créer une nouvelle carte à base d'esp32 WROVER et d'optimiser les I/O,
 le but de cette carte est de pouvoir réunir toutes les fonctionnalités nécessaires sur un seul support
 La prochaine séance sera consacré à l'étude et la comparaison des microcontrolleur esp32 WROOM et WROVER
@@ -31,6 +32,7 @@ Le but étant de réussir à intégrer au minimum toutes les I/O nécessaires au
 --------------------------01/10/21-----------------------------------------
 Finalisation du fichier de correspondance, toutes les I/O rentrent dans l'ESP, pour cela il faudra gérer l'alimentation des périphériques (SDCard - Caméra/Moteur/Laser)
 séparement.
+Lien vers le fichier de correspondance : ./Projet_frelons/Tableau_correspondance_pinsV2.xlsx
 Nous avons aussi brasé des esp32 sur des cartes de test (carte de report)
 ---------------------------------------------------------------------------
 --------------------------22/10/21-----------------------------------------
@@ -41,6 +43,7 @@ Il reste à vérifier via des tests sur table (avec les cartes faites précedemm
 --------------------------12/11/21-----------------------------------------
 Point avec M Peter sur le schéma de la carte.
 Mise à jour du schéma
+Les schémas sont stockés ici : ./Projet_frelons/Schema_carte
 ---------------------------------------------------------------------------
 --------------------------07/01/22-----------------------------------------
 Essai de connexion sans succès sur l'ESP32 Wrover
