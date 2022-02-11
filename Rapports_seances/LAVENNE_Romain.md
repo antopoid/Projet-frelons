@@ -49,6 +49,7 @@ Les schémas sont stockés ici : ./Projet_frelons/Schema_carte
 M Peter à finalisé le routage du PCB, le schéma se trouve ici : ./Projet-frelons/Schema_carte/Final
 Le PCB a été envoyé en production
 --------------------------07/01/22-----------------------------------------
+TEST SUR LE PCB
 Essai de connexion sans succès sur l'ESP32 Wrover
 Pourtant un ESP32 CAM fonctionne correctement...
 Utilisation d'un autre IDE (Vscode) sans succès
@@ -57,6 +58,7 @@ Le convertisseur USB-TTL est bien reconnu, mais il n'est pas possible d'établir
 Problème non résolu pour le moment, il est impossible de confirmer le bon fonctionnement de la caméra avec cette configuration pour le moment.
 ---------------------------------------------------------------------------
 --------------------------03/02/22-----------------------------------------
+TEST SUR LE PCB
 L'ESP32 sur la carte de test ne peut pas se téléverser automatiquement, il faut appuyer sur les deux boutons (RST et PROG) puis relacher RST puis PROG. La cause reste inconnue.
 Nous avons reçu les nouvelles cartes, braser les différents composants CMS et traversants. Il manque une capa de 15 pF, remplacé par une 10pF pour le moment (clk de la caméra)
 3 erreurs pour le moment sur la carte : 
@@ -65,11 +67,31 @@ Nous avons reçu les nouvelles cartes, braser les différents composants CMS et 
 - Led inversé
 Prochain cours : suite du debug de la carte 
 --------------------------04/02/22-----------------------------------------
+TEST SUR LE PCB
 J'ai créé un fichier excel répertoriant les différents tests effectués ainsi que les corrections à apporter sur une prochaine version de la carte.
 Le fichier se trouve ici ./Projet_frelons/Debug_carte.xlsx
 J'ai pu valider le fonctionnement du PCA9685.
 Prochain cours : test de la mesure de la LDR via le MCP3428
 				 test du pilotage du 5v et du POWER_SD(Alimentation de la carte SD)
 --------------------------10/02/22-----------------------------------------
+TEST SUR LE PCB
 Note : attention à bien changer les pins SDA et SCL car en général les pins par défaut sont mappées sur 21 et 22.
 Dans notre cas SCL : 32, SDA : 33
+Test du MCP3428 et de l'alimentation via le connecteur X1 (alimentation en 5v et 3v3 via un régulateur de tension)
+Ok avec la LDR et le 5v_MES (les mesures des signaux sont dans ./Projet_frelons/Debug_carte.xlsx)
+Les codes utilisés pour les tests se trouvent ici : ./Projet_frelons/Arduino
+Prochain cours : test de la caméra
+				 test de la SD Card
+--------------------------11/02/22-----------------------------------------
+TEST SUR LE PCB
+Récupération de différents codes pour tester la caméra et la carte SD (disponible dans ./Projet_frelons/Arduino)
+Impossible de faire fonctionner la caméra sur le PCB (avec un code fonctionnant sur un ESP32 CAM)
+Il s'avère que le pinout de la nappe de la caméra est inversée par rapport au connecteur.
+Il n'est donc pas possible pour le moment de tester la caméra (impossibilité de retourner le connecteur)
+Je vais également attendre le retour de Arnaud et Gilbert qui travaille sur la caméra avec la carte de test.
+Pour la carte SD, nous avons essayé un bout de code fonctionnant avec l'ESP32 CAM.
+Ce même code ne fonctionne pas sur le PCB. Après analyse je me suis rendu compte que j'ai oublié les resistances de tirage sur les pins data et CMD.
+J'ai fait un dernier test à la fin de la séance qui n'a pas été concluant.
+Prochain cours : essayer de résoudre le problème avec la carte SD
+				 essayer le micro et les moteurs
+				 aider au besoin Gilbert et Arnaud pour faire fonctionner la caméra sur la carte de test
