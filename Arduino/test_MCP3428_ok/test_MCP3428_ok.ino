@@ -42,7 +42,7 @@ void loop() {
   long value = 0;
   MCP342x::Config status;
   // Initiate a conversion; convertAndRead() will wait until it can be read
-  uint8_t err = adc.convertAndRead(MCP342x::channel2, MCP342x::oneShot,
+  uint8_t err = adc.convertAndRead(MCP342x::channel3, MCP342x::oneShot,
            MCP342x::resolution16, MCP342x::gain1,
            1000000, value, status);
   if (err) {
