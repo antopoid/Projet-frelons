@@ -40,13 +40,14 @@ Recherche dans les datasheets afin de trouver et/ou de calculer les différentes
 Caméra : En action : 125mW 
 	 En standby : P = U*I; Avec U=3.3V et I= 600µA Soit P= 3.3 * 600 E-6 = 1980 * 10-6
 
-Séance du 10/02/2022
+Séance du 10/02/2022 et du 11/02/2022
 
-Objectif de la séance: terminer le calcul des puissances.
+Objectif de la séance: faire fonctionner les différents systèmes
+		       analyser le code pour la caméra (cf mail peter 06/02/2022)
+		   
+f
 
 
-
-Séance du 11/02/2022
 
 Séance du 03/03/2022
 
