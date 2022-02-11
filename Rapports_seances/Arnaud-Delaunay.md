@@ -48,3 +48,12 @@ Conclusion : Penser à faire la manip lors des tests de programmation
 Terminer la partie d'alimentation des cartes avant de se concentrer sur le laser et les moteurs
 Cablage ESP32 avec carte caméra avec test de communication Manque de Pin SDA SCL et CA_PWM sur le schéma
 Revoir le schéma pour modification
+
+10/02/2022 :
+
+Reprise des tests sur breadboard communication ESP32 et caméra 
+Recherche des pins manquants (PWDN) : essai de PWDN sur le Pin IO14 ESPWROVER
+Utilisation du programme trouvé sur le git (Arduino/test camera ESP32/CameraWebServer) pour tester la communication
+Modification du programme pour l'adapter au test (N° de pins, etc..).
+Résultat du test : Le téléversement est concluant mais la connexion WiFi n'est pas établie : récupération d'une antenne WiFi 2,6 GHz 
+Test alimentation servomoteurs 5V puis programme Arduino pour commande angle avec la PWM
