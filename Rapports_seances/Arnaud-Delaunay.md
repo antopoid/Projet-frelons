@@ -31,3 +31,29 @@ Entretien avec des apiculteurs :
 	+ Valeur des composants externes au régulateur afin de déterminer la valeur du courant, possibilité de diminuer l'intensité avec un signal PWM
 	+ Utilisation lentilles de verre pour focaliser le laser en un point et ventilateur pour dissipation de la chaleur
 	+ Frelon brûlé en quelques secondes
+
+
+07/01/2021 :
+
+Test Programme sur l'ESP32 CAM. 
+Diffilcultés rencontrées sur l'IDE ARDUINO et la communication entre l'ESP32 WROVER et la caméra. 
+Système de caméra à revoir sur l'aspect software.
+
+03/02/2022 - 04/02/2022 :
+
+Reprise des tests de communication entre l'ESP32 et l'ordinateur de programmation 
+Problème trouvé : le module de communication USB série C n'arrive pas à téléverser automatiquement et rencontre des diffilcultés lors du téléversement manuel
+Conclusion : Penser à faire la manip lors des tests de programmation
+
+Terminer la partie d'alimentation des cartes avant de se concentrer sur le laser et les moteurs
+Cablage ESP32 avec carte caméra avec test de communication Manque de Pin SDA SCL et CA_PWM sur le schéma
+Revoir le schéma pour modification
+
+10/02/2022 :
+
+Reprise des tests sur breadboard communication ESP32 et caméra 
+Recherche des pins manquants (PWDN) : essai de PWDN sur le Pin IO14 ESPWROVER
+Utilisation du programme trouvé sur le git (Arduino/test camera ESP32/CameraWebServer) pour tester la communication
+Modification du programme pour l'adapter au test (N° de pins, etc..).
+Résultat du test : Le téléversement est concluant mais la connexion WiFi n'est pas établie : récupération d'une antenne WiFi 2,6 GHz 
+Test alimentation servomoteurs 5V puis programme Arduino pour commande angle avec la PWM

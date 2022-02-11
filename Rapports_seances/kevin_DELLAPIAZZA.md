@@ -1,3 +1,5 @@
+1er semestre
+
 Séance du 27/08/21
 
 -Récupération du dossier Git du groupe de l'année précédente
@@ -28,3 +30,26 @@ Séance du 23/09/21
 
 -Travaille de recherche sur les I/O et définitions de celles-ci (disponible ou non)
 -Call sur un projet de détection d'image 
+
+
+2ème semestre
+
+Séance du 03/02/2022 
+
+Recherche dans les datasheets afin de trouver et/ou de calculer les différentes consommations des sorties. 
+Caméra : En action : 125mW 
+	 En standby : P = U*I; Avec U=3.3V et I= 600µA Soit P= 3.3 * 600 E-6 = 1980 * 10-6
+
+Séance du 10/02/2022
+
+Objectif de la séance: terminer le calcul des puissances.
+
+
+
+Séance du 11/02/2022
+
+Séance du 03/03/2022
+
+Séance du 04/03/2022
+
+Séance du 11/03/2022
