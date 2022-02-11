@@ -70,3 +70,6 @@ Le fichier se trouve ici ./Projet_frelons/Debug_carte.xlsx
 J'ai pu valider le fonctionnement du PCA9685.
 Prochain cours : test de la mesure de la LDR via le MCP3428
 				 test du pilotage du 5v et du POWER_SD(Alimentation de la carte SD)
+--------------------------10/02/22-----------------------------------------
+Note : attention à bien changer les pins SDA et SCL car en général les pins par défaut sont mappées sur 21 et 22.
+Dans notre cas SCL : 32, SDA : 33
