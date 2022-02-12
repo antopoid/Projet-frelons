@@ -57,3 +57,21 @@ Utilisation du programme trouvé sur le git (Arduino/test camera ESP32/CameraWeb
 Modification du programme pour l'adapter au test (N° de pins, etc..).
 Résultat du test : Le téléversement est concluant mais la connexion WiFi n'est pas établie : récupération d'une antenne WiFi 2,6 GHz 
 Test alimentation servomoteurs 5V puis programme Arduino pour commande angle avec la PWM
+
+10/02/2022 - 11/02/2022 :
+
+Reprise des tests sur breadboard communication ESP32 et caméra 
+Recherche des pins manquants (PWDN) : essai de PWDN sur le Pin IO14 ESPWROVER
+Utilisation du programme trouvé sur le git (Arduino/test camera ESP32/CameraWebServer) pour tester la communication
+Modification du programme pour l'adapter au test (N° de pins, etc..).
+Résultat du test : Le téléversement est concluant mais la connexion WiFi n'est pas établie : récupération d'une antenne WiFi 2,6 GHz 
+Test alimentation servomoteurs 5V puis programme Arduino pour commande angle avec la PWM
+Tests concluants sans programme Arduino Tests à faire avec la commande
+
+Antenne WiFi obtenue, reprise des tests avec la caméra
+Test avec le module caméra pour vérifier la caméra, Résultat concluant : la caméra est opérationnelle
+Reprise du code pour avoir une base vierge et un programme avec les modifications sur le répertoire Git :
+- base vierge : Arduino/test camera ESP32/Test_ESP32_CAM
+
+Problème de sens des Pins de la caméra, reprise du câblage de la breadboard et tests sans succès A continuer sur la séance suivante
+
