@@ -82,3 +82,12 @@ entry 0x400806b4
 ---------------------------------------------------Séance : 11/02/2022---------------------------------------------
 Objectif : Suite Test de la camera et câblage du servomoteur
 
+Lors de cette séance, nous avons recupéré l'antenne de 2,4 GHz avec le prof et nous avons continué notre séance de 
+test. Pour savoir si nos câblages ne sont pas bien fait ou si le programme de test n'était pas correcte, 
+nous avons testé d'abord ESP32 CAM qui a bien fonctionné ce qui nous a permis de valider le bon fonctionnement du 
+du programme de test du modèle AI THINKER ESP32-CAM. Ensuite, nous avons essayé de le retesté sur la camera cablée 
+sur notre planche de test en modifiant les pins et en choisissant le modèle WROVER-KIT mais que nous n'avons pas 
+encore réussi à faire marcher et que nous continuerons à tester à la séance prochaine.
+
+---------------------------------------------------Séance : 03/03/2022---------------------------------------------
+Objectif : Suite Test de la camera et câblage du servomoteur
