@@ -90,4 +90,28 @@ sur notre planche de test en modifiant les pins et en choisissant le modèle WRO
 encore réussi à faire marcher et que nous continuerons à tester à la séance prochaine.
 
 ---------------------------------------------------Séance : 03/03/2022---------------------------------------------
-Objectif : Suite Test de la camera et câblage du servomoteur
+Objectif : Suite Test de la camera
+
+Lors de cette séance, nous avons détecté des erreurs de câblage sur la plaque de test car la numérotation du bornier
+relié à la camera était inversée, ce qui nous a poussé à le reprendre. Pendant le test, nous avons rencontré des 
+erreurs dû à la mauvaise config des pins de la caméra que nous avons fini par corriger en passant par le debuggage 
+du code ligne par ligne, ensuite en regardant notre tableau de correspondance et en entrant les bons pins. En plus 
+de ça, un autre petit problème lié à la faible alimentation du ciruit affichait une erreur "Brownout" que nous avons 
+également résolu en le connectant avec une source de tension supplémentaire (batterie d'environ 5V). Finalement nous 
+avons terminé cette séance sur une erreur de compilation dû au faible espace mémoire pour pouvoir stocker les variables 
+globales et locales (sketch too big).
+
+---------------------------------------------------Séance : 04/03/2022---------------------------------------------
+Objectif : Suite Test de la camera
+
+Lors de cette séance, nous avons résolu le problème lié à l'espace mémoire en la partionnant pour l'accorder 3MB 
+pendant la compilation. Après cette correction, la caméra parvenait à s'initialiser correctement et à nous afficher 
+l'url (http:"192.168.10.205") pour que nous puissions nous connecter dessus par wifi. Sauf que la camera n'affichait 
+pas une bonne image parce qu'on avait pas connecté le GND du circuit relié à notre caméra au GND fournit par l'ESP32-
+WROVER-KIT. Après cette modification, on obtenait la bonne image sans être en mésure de lancer le stream à cause du 
+navigateur qu'on utilisait. Il a fallu que l'on relance le stream sur un autre navigateur (Brave Browser) pour qu'il 
+marche, ce qui nous a permis de valider le bon fonctionnement de la caméra. A la fin de cette séance, nous avons mis 
+à jour le schéma de notre circuit afin qu'un nouveau circuit soit prochainement fabriqué sans erreur de connexion.
+
+---------------------------------------------------Séance : 11/03/2022---------------------------------------------
+Objectif : Câblage du servo-moteur.
