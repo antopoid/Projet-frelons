@@ -113,5 +113,8 @@ navigateur qu'on utilisait. Il a fallu que l'on relance le stream sur un autre n
 marche, ce qui nous a permis de valider le bon fonctionnement de la caméra. A la fin de cette séance, nous avons mis 
 à jour le schéma de notre circuit afin qu'un nouveau circuit soit prochainement fabriqué sans erreur de connexion.
 
+Petite précision : N'oubliez pas de remettre la résistance tout en haut de l'ESP32-WROVER-KIT pour éviter de remettre 
+l'antenne de 2,4 GHz.
+
 ---------------------------------------------------Séance : 11/03/2022---------------------------------------------
 Objectif : Câblage du servo-moteur.
