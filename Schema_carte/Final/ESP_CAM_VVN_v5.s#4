@@ -15796,7 +15796,7 @@ dark : 500k
 <segment>
 <pinref part="U2" gate="G$1" pin="IO14"/>
 <wire x1="205.74" y1="129.54" x2="203.2" y2="129.54" width="0.1524" layer="91"/>
-<label x="200.66" y="129.54" size="1.778" layer="95"/>
+<label x="186.69" y="129.54" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
