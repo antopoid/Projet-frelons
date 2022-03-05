@@ -77,30 +77,30 @@ Problème de sens des Pins de la caméra, reprise du câblage de la breadboard e
 
 03/03/2022 - 04/03/2022 :
 
-Reprise du câblage de la carte WROVER_CAM + tests téléversement programme
-Résultat test : Connexion réussie mais erreur : Brownout detector was triggered
-Solution : Brancher une alimentation supplémentaire
+- Reprise du câblage de la carte WROVER_CAM + tests téléversement programme
+	Résultat test : Connexion réussie mais erreur : Brownout detector was triggered
+	Solution : Brancher une alimentation supplémentaire
 
-Reprise de test téléversement
-Résultat test : erreur Core 1 panic'ed (LoadProhibited) exception was unhandled
-Test du code partie par partie en utilisant "while(1)" problème trouvé sur la partie concernant la configuration de la caméra ligne : 
-Problème trouvé : mauvais numéro de Pin dans la config Excel à Modifier
+- Reprise de test téléversement
+	Résultat test : erreur Core 1 panic'ed (LoadProhibited) exception was unhandled
+	Test du code partie par partie en utilisant "while(1)" problème trouvé sur la partie concernant la configuration de la caméra ligne : 
+	Problème trouvé : mauvais numéro de Pin dans la config Excel à Modifier
 
-2e tentative test téléversement
-Résultat test : erreur sketch too big
-Problème : Mémoire Arduino > Mémoire ESP 32 réglage sur le logiciel : Outils/Partition Scheme -> Huge ATTP (NO OATP
+- 2e tentative test téléversement
+	Résultat test : erreur sketch too big
+	Problème : Mémoire Arduino > Mémoire ESP 32 réglage sur le logiciel : Outils/Partition Scheme -> Huge ATTP (NO OATP
 
-3e tentative test téléversement
-Résultat test : erreur esp_camera_fb_get(): Failed to get the frame on time!
-Solution : réduction de la fréquence de 20MHz à 10MHz
+- 3e tentative test téléversement
+	Résultat test : erreur esp_camera_fb_get(): Failed to get the frame on time!
+	Solution : réduction de la fréquence de 20MHz à 10MHz
 
-4e tentative test téléversement
-Résultat test : connexion établi avec la caméra capture image OK mais pas d'image sur le stream
-Solution : Mettre à jour le navigateur utilisé pour accéder au contrôle de la caméra
+- 4e tentative test téléversement
+	Résultat test : connexion établi avec la caméra capture image OK mais pas d'image sur le stream
+	Solution : Mettre à jour le navigateur utilisé pour accéder au contrôle de la caméra
 
-5e tentative test téléversement
-Résultat test : Stream et capture image fonctionnels 
+- 5e tentative test téléversement
+	Résultat test : Stream et capture image fonctionnels 
 
-Misé à jour du schéma de l'ESP WROVER : ESP_CAM_VVN_v5.sch
-Ajout de la CA_PWDN sur IO14, inversion des bornes TX et RX et inversion des bornes du bornier de la caméra (de 1 -> 24 à 24 -> 1)
+- Misé à jour du schéma de l'ESP WROVER : ESP_CAM_VVN_v5.sch
+	Ajout de la CA_PWDN sur IO14, inversion des bornes TX et RX et inversion des bornes du bornier de la caméra (de 1 -> 24 à 24 -> 1)
 
