@@ -95,3 +95,18 @@ J'ai fait un dernier test à la fin de la séance qui n'a pas été concluant.
 Prochain cours : essayer de résoudre le problème avec la carte SD
 				 essayer le micro et les moteurs
 				 aider au besoin Gilbert et Arnaud pour faire fonctionner la caméra sur la carte de test
+--------------------------03/03/22-----------------------------------------
+TEST SUR LE PCB - SD CARD
+J'ai essayé de faire marcher la sd card du PCB sans succès. Je me suis finalement rendu compte que sur le schéma du PCB, c'est une SD Card qui est dessinée et non le support de SD.
+De ce fait, toutes les pins sont inversées. J'ai essayé d'abord de braser une nappe sur un support de sd en volant afin de le relier au support côté carte, mais les pins étaient beaucoup trop petites.
+J'ai essayé ensuite de braser un support de SD à l'envers mais je n'ai pas réussi à faire fonctionner la SD card. J'ai toujours le même message d'erreur "No card mounted"
+Prochain cours : je continue d'analyser le problème de la SD card.
+--------------------------04/03/22-----------------------------------------
+TEST SUR LE PCB - SD CARD
+Cette fois ci j'ai essayé de faire marcher la SD card en utilisant un autre PCB (identique au prototype), mais comprenant seulement le support de SD card et en utilisant un ESP Heltec Wifi Lora 32.
+J'ai cablé le support de SD à l'inverse du PCB prototype mais en utilisant exactement les mêmes I/O.
+J'ai finalement réussi à créer un fichier, écrire dedans puis le lire.
+J'ai mis à jour le schéma du PCB. Le tableau de correspondance (./Projet_frelons/Tableau_correspondance_pinsV2.xlsx) reste intact car nous utilisons les mêmes pins.
+J'ai mis à jour le fichier debug carte (./Projet_frelons/Debug_carte.xlsx) en rajoutant le pinout d'une micro SD et le connecteur du PCB.
+A noter qu'il faudra essayer de câbler les resistances de 47k servant de pullup sur les pins data de la SD(je ne connais pas l'impact de ces resistances pour le moment)
+Prochain cours : Avoir la possibilité d'essayer le nouveau PCB avec les corrections et valider toutes les fonctionnalités.
