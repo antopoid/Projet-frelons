@@ -104,3 +104,12 @@ Problème de sens des Pins de la caméra, reprise du câblage de la breadboard e
 - Misé à jour du schéma de l'ESP WROVER : ESP_CAM_VVN_v5.sch
 	Ajout de la CA_PWDN sur IO14, inversion des bornes TX et RX et inversion des bornes du bornier de la caméra (de 1 -> 24 à 24 -> 1)
 
+11/03/2022 :
+
+- Début partie Moteurs pas à pas : Câblage terminée et tests programme contrôle moteur
+	Résultat test : Moteurs tourne mais de façon inégale
+	Solution : Modifier le programme pour faire une rotation réstreinte
+	
+- 2e test rotation
+	Résultat test : Rotation toujours inégale
+	Revoir le programme utilisé
