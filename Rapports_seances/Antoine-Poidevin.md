@@ -60,3 +60,44 @@ Nous avons televersé du code et testé le fonctionnement du PCA9685
 les sroties PWM fonctionne bien, les leds aussi, Les tensions sont bonnes, nous avons trouvé et testé les bonnes librairies adequates.
 
 Prochaine sceances nous allons tester le MCP
+---------------------------------------------------------------------------
+--------------------------10/02/22-----------------------------------------
+Cette scéance etait dediée au test et à la configuration du MCP3428:
+- Nous avons commencé par verifier si les pins sur la carte de test correspondait bien au pins sur eagle grace à des tests de continuités.
+- Nous avons ensuite verifié si les alimentations relié au mcp fontcionne, les voltages sont bons, le mcp reagi correctement. 
+- en activant les bonnes sorties sur le PCA9685, on active sont alimentation, le code est fonctionnel et on arriver a bien affiché les entrées du MCP3428.
+- (il faut faire attention les pins SDA et SCL ne sont pas les memes que ceux par defaults sur une ESP32)
+- le convertisseur reagi correctement, avec une LDR le signal est bien convertie. nous avons stocké les valeurs.
+Prochaine sceance nous testons la camera.
+---------------------------------------------------------------------------
+--------------------------11/02/22-----------------------------------------
+Aujourd'hui on test la camera sur le PCB de test (carte imprimée)
+- on commence par telecharger la bonne librairie dediée a l'esp32 et compatible avec le AIthinker de base. (espressif ici en l'occurence) 
+- on se rend donc sur le site de espressif pour voir comment ils ont crée la librairie et pour quel carte.
+- un exemple est fournis dans la librairie "CameraWebServer" il est bie commenté et nous permet de choisir sur quel type d'esp32 on souhaite l'utiliser.
+- sachant que l'on s'est basé sur le cablage de l'esp32-cam de aithinker et que l'on a créé notre carte de test sur ce modele alors 
+on choisie "#define CAMERA_MODELAI_THINKER // Has PSRAM" important pour le choix de la PSRAM, c'est une memoire vive supplementaire utilisé par l'esp32 en SPI.
+- le proggrame correspond a un server web qui se connecte sur un point wifi et heberge une page web qui elle meme affiche en temps réel ce qui se passe devantr la camera (avec differentes options)
+- Malheureusement le branchement de la nappe est inversé avec le mappage des pins, au vu de la taille du connecteur on ne peut pas le dessouder ni intervenir dessus.
+- Nous allons donc pour l'instant nous focaliser sur la carte de test avec la camera separée afin de trouver le bon cablage et de trouver tout les problemes auxquelles on pourrait etre confrontés.
+Prochaine sceance j'aide gilbert et arnaud poir la camera et j'aide romain avec la carte SD
+---------------------------------------------------------------------------
+--------------------------03/03/22-----------------------------------------
+Scéance dedié à essayer de faire fonctionner le module de carte SD sur la carte imprimée.
+- on commence par chercher differente librairie sur le web, afin de trouver une librairie qui nous permet d'acceder au fichier source pour modifier les pins de bases car nous avons changer l'organisation des pins qui se superpose avec la camera etc.
+- Nous avons donc commencés par essayer la librairie sur L'esp32 cam et ça fonctionne apres quelques modifs dans le code sur les pins.
+(un ficher est créé puis supprimé, pareil pour un dossier, on ecrit ensuite dans un fichier)
+- Ensuite on essaie la meme chose sur la carte imprimé, ça ne fonctionne pas, on essaie de debugé comme on peut.
+- on decouvre que les pins sur la carte sont inversé et qu'il va falloir trouver une alternative.
+- on essaie de souder le support SD à l'envers mais sans succès car il y a un court circuit.
+Prochain cours on investie plus profondement sur ce sujet.
+---------------------------------------------------------------------------
+--------------------------04/03/22-----------------------------------------
+- j'ai aidé romain pour essayer de faire fonctionner la carte SD sur la nouvelle carte imprimé nue 
+- j'ai utilisé une nappe fournis par Mr peter pour faire fonctionner la camera car les pins sont inversé, il ya tres peu de documentations fournis sur internet.
+- Mr peter ma donc fournis deux cartes plus facile a maitriser qui permettent de suivre exactement les pins utilisés.
+- j'ai donc soudé les branchement dessus des deux cotés, et j'ai essayé d'uploader du codes sur l'esp32 cam afin d'essayer.
+- sans succés pour l'instant, j'investirai plus profondement a la sceance suivante afin de trouver les problemes et branchement adequats.
+- j'ai aussi aidé arnaud et gilbert afin de televersé avec succés la carte sur L'esp32 de test, nous avons eux beaucoup de problemes en tout genre.
+- deja le televersement n'etait pas possible a la base, ensuite la ram etait mal configurée, ensuite, il y avait un court circuit qui faisait redemarrer en boucle l'esp32 puis la camera etait mal branché, au final l'esp32 demarre et arrive a afficher ce qui se passe devant la camera.
+- prochaine sceance je dois terminer mes branchement sur la carte imprimé avec la camera afin de corriger le schema pour une impression futur.

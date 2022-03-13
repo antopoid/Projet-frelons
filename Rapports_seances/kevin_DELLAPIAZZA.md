@@ -44,12 +44,19 @@ Séance du 10/02/2022 et du 11/02/2022
 
 Objectif de la séance: faire fonctionner les différents systèmes
 		       analyser le code pour la caméra (cf mail peter 06/02/2022)
-		   
-f
+Durant ces séances: analyse des différentes sources données dans le mail, j'ai essayé de comprendre les codes ce qui n'a pas était facile pour certains codes.
+
+Séance du 03/03/2022 et du 04/03/2022
+
+Objectif de la séance: analyser le code pour la caméra (cf mail peter 06/02/2022)
+suite aux recherches faite les séances précédentes, je e suis attardé au répertoires du git données dans le mail avec le code pour la caméra:
+Detecteur-ESP32-Cam-Blob-Detector/sketchbook/CaptureWithoutDelay_save3_6/CaptureWithoutDelay_save3_6.ino 
+Dans un premier temps j'ai analysé l'ensemble du code afin de le comprendre et de savoir ce qui était fait.
+puis dans un second temps, j'ai regardé fonction par fonction afin de les analyser une par une.
+Le code permet de capturer les images issue de la caméra, dans le même temps de les analyser afin de voir les points les plus noirs sur la photo et de réagir en conséquence. 
+une fois que les cliché ont était analyser selon la position de la tâche nous allons placer le laser afin de pointer l'endroit de l'image et d'actionner le laser. 
 
 
-
-Séance du 03/03/2022
 
 Séance du 04/03/2022
 
