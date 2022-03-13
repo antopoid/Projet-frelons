@@ -23,10 +23,11 @@ void setup() {
 #endif
 }
 void loop() {
-  /*pwm.setPWM(2, 4096, 4096 );
-  pwm.setPWM(14, 0, 4096 );
-  pwm.setPWM(15, 0, 0 );*/
-  pwm.setPin(14, 4095,0);
+
+  pwm.setPin(0,0,0);
+  delay(1000);
+  pwm.setPin(0,4095,0);
+  delay(1000);
   pwm.setPin(15, 0,0);
   pwm.setPin(2, 4095,0);
  

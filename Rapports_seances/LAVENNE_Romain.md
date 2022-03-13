@@ -110,3 +110,9 @@ J'ai mis à jour le schéma du PCB. Le tableau de correspondance (./Projet_frelo
 J'ai mis à jour le fichier debug carte (./Projet_frelons/Debug_carte.xlsx) en rajoutant le pinout d'une micro SD et le connecteur du PCB.
 A noter qu'il faudra essayer de câbler les resistances de 47k servant de pullup sur les pins data de la SD(je ne connais pas l'impact de ces resistances pour le moment)
 Prochain cours : Avoir la possibilité d'essayer le nouveau PCB avec les corrections et valider toutes les fonctionnalités.
+--------------------------11/03/22-----------------------------------------
+Présentation du rapport d'activité du semestre.
+En seconde partie de cours : La V2 de la carte étant en production, j'ai commencé à essayer de piloter les moteurs via le PCA9685 de la carte V1. 
+Les moteurs fonctionnent sans problème, il faut juste que je comprenne comment les piloter correctement. (ils arrivent à chaque fois en butée)
+Prochain cours : Essayer les fonctionnalités de la carte V2 (Caméra, SD Card, PCA9685, MCP3428, alimentations).
+				 Si tout est ok, préparer un exemplaire à envoyer à Bernard Barrois et Jody Nourry.
