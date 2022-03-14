@@ -57,7 +57,7 @@ Le code permet de capturer les images issue de la caméra, dans le même temps d
 une fois que les cliché ont était analyser selon la position de la tâche nous allons placer le laser afin de pointer l'endroit de l'image et d'actionner le laser. 
 
 
-
-Séance du 04/03/2022
-
 Séance du 11/03/2022
+Présentation de la partie code caméra
+Note suite à la présentation: rapport écrit pour la réalisation du code à transemettre au groupe
+Continue les analyses du code et recherche sur les autres déposit fournie par Barrois
