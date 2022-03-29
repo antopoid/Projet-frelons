@@ -1,7 +1,7 @@
-#include <MCP342X.h>
+#include <MCP342x.h>
 
+////////////////////////////////////////
 
-////////////////////////////////////////////
 #include <Wire.h>
 #include <Adafruit_PWMServoDriver.h> //You can download this library below
 

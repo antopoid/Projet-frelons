@@ -195,8 +195,9 @@ void setup() {
 #endif
 
   pwm.setPin(14, 4095,0);
-  pwm.setPin(15, 0,0);
-  pwm.setPin(3, 4095,0);
+  pwm.setPin(15, 4095,0);
+  pwm.setPin(2, 4095,0);
+  pwm.setPin(3, 0,0);
 
 if(!SD_MMC.begin()){
         Serial.println("Card Mount Failed");
