@@ -61,3 +61,7 @@ Séance du 11/03/2022
 Présentation de la partie code caméra
 Note suite à la présentation: rapport écrit pour la réalisation du code à transemettre au groupe
 Continue les analyses du code et recherche sur les autres déposit fournie par Barrois
+
+Séance du 29/03/2022
+
+Objectif de la séance : rédaction du document descriptif de l'analyse des codes (le fichier sera posté dans le dossier Kevin_DELLAPIAZZA)
