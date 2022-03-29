@@ -47,8 +47,20 @@ void setup(void)
 }
 
  
-void loop()
-{
-    Serial.println(mcp3428.readADC(), 3);
-    delay(100);
+  long value = 0;
+  MCP342x::Config status;
+  // Initiate a conversion; convertAndRead() will wait until it can be read
+  uint8_t err = adc.convertAndRead(MCP342x::channel2, MCP342x::oneShot,
+           MCP342x::resolution16, MCP342x::gain1,
+           1000000, value, status);
+  if (err) {
+    Serial.print("Convert error: ");
+    Serial.println(err);
+  }
+  else {
+    Serial.print("Value: ");
+    Serial.println(value);
+  }
+
+  delay(100);
 }
