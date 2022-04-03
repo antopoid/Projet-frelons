@@ -113,3 +113,14 @@ Problème de sens des Pins de la caméra, reprise du câblage de la breadboard e
 - 2e test rotation
 	Résultat test : Rotation toujours inégale
 	Revoir le programme utilisé
+	
+29/03/2022 :
+
+- Test Cam et alimentation PCA sur la nouvelle carte : 
+	- Test Cam : Erreur 0x20002 Camera init failed solution : changer le modèle de la caméra
+	- 2e test : Erreur 0x20004 Detected camera not supported test avec batterie supplémentaire résultat sans succès à investiguer 
+
+- Test Alimentation PCA sur la nouvelle carte :
+	- Test Alimentaion : présence tension 3V sur les sorties PWM;
+	- Test Tension V1 : objectif 2.7V tension relevée 2.3V
+	- Test Tension V2 : objectif 1.8V tension relevée 1.2V
