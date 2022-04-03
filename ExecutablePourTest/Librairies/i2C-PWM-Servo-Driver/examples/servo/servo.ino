@@ -28,20 +28,21 @@ Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
 // want these to be as small/large as possible without hitting the hard stop
 // for max range. You'll have to tweak them as necessary to match the servos you
 // have!
-#define SERVOMIN  0 // this is the 'minimum' pulse length count (out of 4096)
-#define SERVOMAX  50 // this is the 'maximum' pulse length count (out of 4096)
+#define SERVOMIN  150 // this is the 'minimum' pulse length count (out of 4096)
+#define SERVOMAX  600 // this is the 'maximum' pulse length count (out of 4096)
 
 // our servo # counter
 uint8_t servonum = 0;
 
 void setup() {
-  Wire.begin(33, 32); // Set if your using can use any two pins > SDA to #2 and SCL to #14
   Serial.begin(9600);
   Serial.println("16 channel Servo test!");
 
   pwm.begin();
   
   pwm.setPWMFreq(60);  // Analog servos run at ~60 Hz updates
+
+  yield();
 }
 
 // you can use this function if you'd like to set the pulse length in seconds
@@ -57,38 +58,23 @@ void setServoPulse(uint8_t n, double pulse) {
   pulse *= 1000;
   pulse /= pulselength;
   Serial.println(pulse);
-  pwm.setPWM(0, 50, 1);
-  pwm.setPWM(1, 4095, pulse);
+  pwm.setPWM(n, 0, pulse);
 }
 
 void loop() {
   // Drive each servo one at a time
   Serial.println(servonum);
-  int i;
-  for (i = 50; i > 1; i--) {
-    pwm.setPWM(0, i, 1);
-    delay(20);
+  for (uint16_t pulselen = SERVOMIN; pulselen < SERVOMAX; pulselen++) {
+    pwm.setPWM(servonum, 0, pulselen);
   }
-   pwm.setPWM(0, 1, 1);
-  delay(2000);
 
-
-
-  /*for (uint16_t pulselen = SERVOMAX; pulselen > SERVOMIN; pulselen--) {
-    pwm.setPWM(1, 0, pulselen);
-  }
-  delay(5000);
-  
-   // Drive each servo one at a time
-  Serial.println(servonum);
-  for (uint16_t pulselen = SERVOMAX; pulselen > SERVOMAX; pulselen--) {
-    pwm.setPWM(0, 0, pulselen);
-  }
   delay(500);
-  for (uint16_t pulselen = SERVOMIN; pulselen < SERVOMIN; pulselen++) {
-    pwm.setPWM(1, 0, pulselen);
+  for (uint16_t pulselen = SERVOMAX; pulselen > SERVOMIN; pulselen--) {
+    pwm.setPWM(servonum, 0, pulselen);
   }
-  delay(5000); */
 
- 
+  delay(500);
+
+  servonum ++;
+  if (servonum > 7) servonum = 0;
 }

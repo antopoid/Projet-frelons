@@ -1,16 +1,21 @@
-#include <Wire.h>
-#include <Adafruit_PWMServoDriver.h> //You can download this library below
+/*
+ * Connect the SD card to the following pins:
+ *
+ * SD Card | ESP32
+ *    D2       12
+ *    D3       13
+ *    CMD      15
+ *    VSS      GND
+ *    VDD      3.3V
+ *    CLK      14
+ *    VSS      GND
+ *    D0       2  (add 1K pull up after flashing)
+ *    D1       4
+ */
 
-Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();  //set default address 0x40
-#if defined(ARDUINO_ARCH_SAMD)  
-// for Zero, output on USB Serial console, remove line below if using programming port to program the Zero!
-   #define Serial SerialUSB
-#endif
+#include "FS.h"
+#include "SD_MMC.h"
 
-#include "FS.h" 
-#include "SD_MMC.h"  
-
-//List dir in SD card
 void listDir(fs::FS &fs, const char * dirname, uint8_t levels){
     Serial.printf("Listing directory: %s\n", dirname);
 
@@ -42,7 +47,6 @@ void listDir(fs::FS &fs, const char * dirname, uint8_t levels){
     }
 }
 
-//Create a dir in SD card
 void createDir(fs::FS &fs, const char * path){
     Serial.printf("Creating Dir: %s\n", path);
     if(fs.mkdir(path)){
@@ -52,7 +56,6 @@ void createDir(fs::FS &fs, const char * path){
     }
 }
 
-//delete a dir in SD card
 void removeDir(fs::FS &fs, const char * path){
     Serial.printf("Removing Dir: %s\n", path);
     if(fs.rmdir(path)){
@@ -62,7 +65,6 @@ void removeDir(fs::FS &fs, const char * path){
     }
 }
 
-//Read a file in SD card
 void readFile(fs::FS &fs, const char * path){
     Serial.printf("Reading file: %s\n", path);
 
@@ -78,7 +80,6 @@ void readFile(fs::FS &fs, const char * path){
     }
 }
 
-//Write a file in SD card
 void writeFile(fs::FS &fs, const char * path, const char * message){
     Serial.printf("Writing file: %s\n", path);
 
@@ -87,9 +88,6 @@ void writeFile(fs::FS &fs, const char * path, const char * message){
         Serial.println("Failed to open file for writing");
         return;
     }
-   
- 
-   //fwrite(fb->buf, 1, fb->len, file);
     if(file.print(message)){
         Serial.println("File written");
     } else {
@@ -97,7 +95,6 @@ void writeFile(fs::FS &fs, const char * path, const char * message){
     }
 }
 
-//Append to the end of file in SD card
 void appendFile(fs::FS &fs, const char * path, const char * message){
     Serial.printf("Appending to file: %s\n", path);
 
@@ -113,7 +110,6 @@ void appendFile(fs::FS &fs, const char * path, const char * message){
     }
 }
 
-//Rename a file in SD card
 void renameFile(fs::FS &fs, const char * path1, const char * path2){
     Serial.printf("Renaming file %s to %s\n", path1, path2);
     if (fs.rename(path1, path2)) {
@@ -123,7 +119,6 @@ void renameFile(fs::FS &fs, const char * path1, const char * path2){
     }
 }
 
-//Delete a file in SD card
 void deleteFile(fs::FS &fs, const char * path){
     Serial.printf("Deleting file: %s\n", path);
     if(fs.remove(path)){
@@ -133,7 +128,6 @@ void deleteFile(fs::FS &fs, const char * path){
     }
 }
 
-//Test read and write speed using test.txt file
 void testFileIO(fs::FS &fs, const char * path){
     File file = fs.open(path);
     static uint8_t buf[512];
@@ -176,25 +170,9 @@ void testFileIO(fs::FS &fs, const char * path){
     file.close();
 }
 
-
-
-void setup() {
-  Wire.begin(33, 32); // Set if your using can use any two pins > SDA to #2 and SCL to #14
-  
-  Serial.begin(115200);
-  pwm.begin();
-  pwm.setPWMFreq(1600);  // Set  This is the maximum PWM frequency
-
-  // if you want to really speed stuff up, you can go into 'fast 400khz I2C' mode
-  // Note some i2c devices dont like this so much so if you're sharing the bus
-#ifdef TWBR     // Set save I2C bitrate
-  uint8_t twbrbackup = TWBR;  
-  // must be changed after calling Wire.begin() (inside pwm.begin())
-  TWBR = 12; // upgrade to 400KHz!
-#endif
-
-
-if(!SD_MMC.begin()){
+void setup(){
+    Serial.begin(115200);
+    if(!SD_MMC.begin()){
         Serial.println("Card Mount Failed");
         return;
     }
@@ -227,7 +205,7 @@ if(!SD_MMC.begin()){
     writeFile(SD_MMC, "/hello.txt", "Hello ");
     appendFile(SD_MMC, "/hello.txt", "World!\n");
     readFile(SD_MMC, "/hello.txt");
-    //deleteFile(SD_MMC, "/foo.txt");
+    deleteFile(SD_MMC, "/foo.txt");
     renameFile(SD_MMC, "/hello.txt", "/foo.txt");
     readFile(SD_MMC, "/foo.txt");
     testFileIO(SD_MMC, "/test.txt");
@@ -235,12 +213,6 @@ if(!SD_MMC.begin()){
     Serial.printf("Used space: %lluMB\n", SD_MMC.usedBytes() / (1024 * 1024));
 }
 
-
-void loop() {
-  
-  pwm.setPin(14, 4095,0);
-  pwm.setPin(15, 0,0);
-  pwm.setPin(3, 4095,0);
-  delay(1000);
+void loop(){
 
 }

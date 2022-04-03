@@ -116,3 +116,17 @@ En seconde partie de cours : La V2 de la carte étant en production, j'ai commen
 Les moteurs fonctionnent sans problème, il faut juste que je comprenne comment les piloter correctement. (ils arrivent à chaque fois en butée)
 Prochain cours : Essayer les fonctionnalités de la carte V2 (Caméra, SD Card, PCA9685, MCP3428, alimentations).
 				 Si tout est ok, préparer un exemplaire à envoyer à Bernard Barrois et Jody Nourry.
+				 Prochain cours : Avoir la possibilité d'essayer le nouveau PCB avec les corrections et valider toutes les fonctionnalités.
+--------------------------29/03/22-----------------------------------------
+Nous avons reçu les nouvelles cartes, M Peter s'est déjà occupé de braser les composants CMS sur deux PCB.
+Je me suis occupé de mettre les boutons, la LDR, et les borniers pour le téléversement.
+J'ai travaillé sur une des deux cartes (possibilité de l'identifier si besoin). 
+Le but étant de tester l'ensemble des fonctionnalités de la carte pour la dernière séance et d'avoir un livrable à fournir.
+Les programmes de test que j'ai validé avec la carte sont stockés ici : ./Projet-frelons/ExecutablePourTest
+J'ai inclus également dans ce dossier les librairies nécessaires au fonctionnement des programmes.
+Le test des LEDs permet de valider le PCA9685 et la partie pilotage des alimentations. (Note : pour les alimentations et les LEDs ==> setPin à 0 = sortie à 1)
+Le test de la LDR permet de valider le MCP3428.
+Pour le test de la SDCard, je n'ai pas réussi à faire fonctionner le programme que j'avais utilisé auparavant sur l'esp32 lora.
+Finalement, en utilisant l'exemple de programme fourni avec la bibliothèque de l'esp32 (création de fichier et dossier) cela à fini par marcher.
+Attention il me semble que si la carte est alimenté uniquement par l'USB d'un PC, la SDCard est un peu capricieuse et ne fonctionne pas toujours. (En USB ==> socket à vide j'ai 2,7V et avec la carte 2,2 - 2,4V entre V+ et GND)
+Gilbert et Arnaud ont pris en charge le test de la caméra. Hormis ce dernier point, le reste de la carte est fonctionnel.
