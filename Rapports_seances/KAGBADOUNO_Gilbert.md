@@ -15,7 +15,7 @@ Objectif : Etablissement de la connexion ESP32 WROVER - Arduino et début des te
 
 Lors de cette séance, nous avons appris par le prof que le téléversement du programme se faisait manuellement avec 
 l'appui des boutons reset et prog, ce qui nous a permis établir la première connexion entre l'ESP32 WROVER et le 
-logiciel Arduino. Ensuite il nous a remis la nouvelle carte qui avait fabriqué permettant de piloter tous les 
+logiciel Arduino. Ensuite il nous a remis la nouvelle carte qui avait été fabriqué permettant de piloter tous les 
 modules sur une seule carte avec un grand nombre d'entrées/sorties utilisables par l'ESP32 WROVER. En voulant tester 
 la nouvelle carte, nous avons vite remarqué des échecs de connexion dû au pin I0 qui n'était connecté à rien et vu 
 aussi une erreur dans le schéma au niveau de POWER (car se mord la queue) que nous avons résolu en faisant 2 shunts.
@@ -113,8 +113,19 @@ navigateur qu'on utilisait. Il a fallu que l'on relance le stream sur un autre n
 marche, ce qui nous a permis de valider le bon fonctionnement de la caméra. A la fin de cette séance, nous avons mis 
 à jour le schéma de notre circuit afin qu'un nouveau circuit soit prochainement fabriqué sans erreur de connexion.
 
-Petite précision : N'oubliez pas de remettre la résistance tout en haut de l'ESP32-WROVER-KIT pour éviter de remettre 
-l'antenne de 2,4 GHz.
-
 ---------------------------------------------------Séance : 11/03/2022---------------------------------------------
-Objectif : Câblage du servo-moteur.
+Objectif : Test du servo-moteur.
+
+Lors de cette séance, le prof nous a informé de la réception de la carte en cours de fabrication pour la séance du 
+29/03/2022, ensuite nous avons procédé au pilotage du servo-moteur par le PCA9685 en utilisant un code exemplaire 
+existant dans Arduino. Après quelques essais, nous avons réussi avec succès de faire marcher les servo-moteurs par 
+le biais du PCA9685. Ce qui nous a permis de valider ce programme de test et le fonctionnement du PCA9685 du circuit 
+imprimé.
+
+---------------------------------------------------Séance : 29/03/2022---------------------------------------------
+Objectif : Test de la caméra sur le circuit fabriqué.
+
+Pendant cette séance, nous avons essayé de tester le fonctionnement de la caméra sur la nouvelle carte fabriquée à 
+travers le PCA9685 sans succès. La caméra est alimentée à la mise à 1 de la sortie power du PCA9685. Lors du test, 
+nous avons rencontré le problème de non détection de la caméra que nous n'avons pas pu résoudre en associant les 
+programmes de test du PCA9685 et de la caméra.
