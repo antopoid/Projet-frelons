@@ -24,6 +24,7 @@ void setup() {
 }
 void loop() {
 
+<<<<<<< Updated upstream
 
   pwm.setPin(14,4095,0);
   pwm.setPin(15,0,0);
@@ -32,6 +33,15 @@ void loop() {
   pwm.setPin(15,4095,0);
   delay(1000);
   
+=======
+  //pwm.setPin(0,0,0);
+  //delay(1000);
+  pwm.setPin(14,4095,0);
+  delay(1000);
+  pwm.setPin(15, 4095,0);
+  delay(1000);
+  //pwm.setPin(2, 4095,0);
+>>>>>>> Stashed changes
  
 
 }

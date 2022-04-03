@@ -1,5 +1,7 @@
 #include "esp_camera.h"
 #include <WiFi.h>
+#include <Wire.h>
+#include <Adafruit_PWMServoDriver.h> //You can download this library below
 
 //
 // WARNING!!! PSRAM IC required for UXGA resolution and high JPEG quality
@@ -19,6 +21,12 @@
 
 #include "camera_pins.h"
 
+Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();  //set default address 0x40
+#if defined(ARDUINO_ARCH_SAMD)  
+// for Zero, output on USB Serial console, remove line below if using programming port to program the Zero!
+   //#define Serial SerialUSB
+#endif
+
 const char* ssid = "GalaxyA22";
 
 const char* password = "solaspochet";
@@ -29,6 +37,24 @@ void setup() {
   Serial.begin(115200);
   Serial.setDebugOutput(true);
   Serial.println("test");
+  
+  Wire.begin(26, 27); // Set if your using can use any two pins > SDA to #2 and SCL to #14
+  Serial.println("test1");
+  
+
+  Serial.println("14CORE | PCA9685 Test Code");
+  
+  delay(4000);
+  pwm.begin();
+  pwm.setPWMFreq(1600);  // Set  This is the maximum PWM frequency
+  
+  // if you want to really speed stuff up, you can go into 'fast 400khz I2C' mode
+  // Note some i2c devices dont like this so much so if you're sharing the bus
+  #ifdef TWBR     // Set save I2C bitrate
+  uint8_t twbrbackup = TWBR;  
+  // must be changed after calling Wire.begin() (inside pwm.begin())
+  TWBR = 12; // upgrade to 400KHz!
+  #endif
 
   camera_config_t config;
   config.ledc_channel = LEDC_CHANNEL_0;
@@ -68,14 +94,17 @@ void setup() {
   pinMode(13, INPUT_PULLUP);
   pinMode(14, INPUT_PULLUP);
 #endif
-
+  Serial.print("test ok");
+  
   // camera init
   esp_err_t err = esp_camera_init(&config);
+  Serial.println("Camera initialisee");
+  while(1);
   if (err != ESP_OK) {
     Serial.printf("Camera init failed with error 0x%x", err);
     return;
   }
- //while(1);
+  
   sensor_t * s = esp_camera_sensor_get();
   // initial sensors are flipped vertically and colors are a bit saturated
   if (s->id.PID == OV3660_PID) {
@@ -108,6 +137,13 @@ void setup() {
 }
 
 void loop() {
+  pwm.setPin(14,4095,0);
+  pwm.setPin(15, 0,0);
+  delay(1000);
+  pwm.setPin(14,0,0);
+  pwm.setPin(15,4095,0);
+  delay(1000);
+  pwm.setPin(2, 4095,0);
   // put your main code here, to run repeatedly:
-  delay(10000);
+  //delay(10000);
 }
