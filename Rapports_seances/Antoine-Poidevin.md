@@ -101,3 +101,14 @@ Prochain cours on investie plus profondement sur ce sujet.
 - j'ai aussi aidé arnaud et gilbert afin de televersé avec succés la carte sur L'esp32 de test, nous avons eux beaucoup de problemes en tout genre.
 - deja le televersement n'etait pas possible a la base, ensuite la ram etait mal configurée, ensuite, il y avait un court circuit qui faisait redemarrer en boucle l'esp32 puis la camera etait mal branché, au final l'esp32 demarre et arrive a afficher ce qui se passe devant la camera.
 - prochaine sceance je dois terminer mes branchement sur la carte imprimé avec la camera afin de corriger le schema pour une impression futur.
+---------------------------------------------------------------------------
+--------------------------29/03/22-----------------------------------------
+- Mr peter nous a gentiment fournis deux nouvelles cartes modifié a nos souhait afin de corriger nos erreurs precedentes tels que l'inversion des pins sur la nappes de la camera ainsi que la SD.
+- Création d'un repertoire specialement dedié au executable de test pour les differentes parties distinctes de la carte.
+- j'ai trié quelques partie de notre repository github
+- apres quelques tests avec nos precedents codes utilisé sur les cartes precedentes il se trouve que le MCP et le PCA fonctionne correctement 
+- les leds et la ldr reagissent egalement correctement
+- Apres de nombreux test differents avec nos precedents programmes enregistrés, la carte SD a finalement reussi a fonctionner, nous en avons tout de meme deduis une perte de tension significative quand la carte SD est branché.
+- Arnaud et gilbert ont quand à eux tentés de faire fonctionner comme ils le pouvaient la camera sur la carte, avec quelques legers debeugage et quelques avancés. J'ai tenté de les aider a quelques reprise.
+- prochaine scéance nous allons investiguer cette baisse de tension du à la carte SD et tenter de faire fonctionner de nouveau la camera.
+

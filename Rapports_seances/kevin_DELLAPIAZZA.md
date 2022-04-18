@@ -64,4 +64,13 @@ Continue les analyses du code et recherche sur les autres déposit fournie par B
 
 Séance du 29/03/2022
 
-Objectif de la séance : rédaction du document descriptif de l'analyse des codes (le fichier sera posté dans le dossier Kevin_DELLAPIAZZA)
+Objectif de la séance : rédaction du document descriptif de l'analyse des codes 
+
+Le document, une fois finalisé, sera posté dans le fichier kevin_DELLAPIAZZA.
+
+Durant cette séance j'ai également aidé pour testé la carte alimentation: 
+	Nous avons dans un premier temps vérifier les 3V sur les PWM -> Validé
+	Test V1: nous avons relevé 2.3 V pour 2.7 d'attendu
+	Test V2: nous avons relevé 1.2V pour 1.8 attendu
+
+
