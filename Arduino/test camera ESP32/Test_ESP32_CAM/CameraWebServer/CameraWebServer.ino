@@ -38,8 +38,7 @@ void setup() {
   Serial.setDebugOutput(true);
   Serial.println("test");
   
-  Wire.begin(26, 27); // Set if your using can use any two pins > SDA to #2 and SCL to #14
-  Serial.println("test1");
+  Wire.begin(33, 32); // Set if your using can use any two pins > SDA to #2 and SCL to #14
   
 
   Serial.println("14CORE | PCA9685 Test Code");
@@ -99,7 +98,6 @@ void setup() {
   // camera init
   esp_err_t err = esp_camera_init(&config);
   Serial.println("Camera initialisee");
-  while(1);
   if (err != ESP_OK) {
     Serial.printf("Camera init failed with error 0x%x", err);
     return;

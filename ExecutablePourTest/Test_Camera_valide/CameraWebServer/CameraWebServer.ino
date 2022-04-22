@@ -39,10 +39,6 @@ void setup() {
   Serial.println("test");
   
   Wire.begin(26, 27); // Set if your using can use any two pins > SDA to #2 and SCL to #14
-  Serial.println("test1");
-  
-
-  Serial.println("14CORE | PCA9685 Test Code");
   
   delay(4000);
   pwm.begin();
@@ -55,7 +51,9 @@ void setup() {
   // must be changed after calling Wire.begin() (inside pwm.begin())
   TWBR = 12; // upgrade to 400KHz!
   #endif
+  pwm.setPin(2, 4095,0);
 
+  
   camera_config_t config;
   config.ledc_channel = LEDC_CHANNEL_0;
   config.ledc_timer = LEDC_TIMER_0;
@@ -94,12 +92,11 @@ void setup() {
   pinMode(13, INPUT_PULLUP);
   pinMode(14, INPUT_PULLUP);
 #endif
-  Serial.print("test ok");
   
   // camera init
   esp_err_t err = esp_camera_init(&config);
   Serial.println("Camera initialisee");
-  while(1);
+
   if (err != ESP_OK) {
     Serial.printf("Camera init failed with error 0x%x", err);
     return;
@@ -137,13 +134,8 @@ void setup() {
 }
 
 void loop() {
-  pwm.setPin(14,4095,0);
-  pwm.setPin(15, 0,0);
-  delay(1000);
-  pwm.setPin(14,0,0);
-  pwm.setPin(15,4095,0);
-  delay(1000);
+
   pwm.setPin(2, 4095,0);
-  // put your main code here, to run repeatedly:
-  //delay(10000);
+
+  delay(10000);
 }
