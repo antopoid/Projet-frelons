@@ -24,12 +24,11 @@ void setup() {
 }
 void loop() {
 
-
-  pwm.setPin(14,4095,0);
-  pwm.setPin(15,0,0);
-  delay(1000);
   pwm.setPin(14,0,0);
   pwm.setPin(15,4095,0);
+  delay(1000);
+  pwm.setPin(15,0,0);
+  pwm.setPin(14,4095,0);
   delay(1000);
   
  
